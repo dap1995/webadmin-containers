@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title> {{ hostname }} </title>
+        <link rel='stylesheet' href='../static/style.css' type='text/css' media='screen'>
+    </head>
+    <body><h1> Server: <font color="blue"> {{ hostname }}</font> </h1>
+        <p> <h2> Versão: </h2> {{ osversion }} 
+        <p> <h3> Distribuição: {{ distribution }} </h3>
+        <h3> Containers </h3>
+        {% for container in containers %}
+        {% if container.get_status()[0] == "U" and container.paused() != True %}
+      	    <div class="container">
+        {% elif container.get_status()[0] == "U" and container.paused() == True %}
+            <div class="containerP">
+        {% else %}
+            <div class="containerE">
+        {% endif %}
+                <p> {{ container.get_name() }}
+                <p> {{ container.get_status() }}
+	    </div> 
+        {% endfor %}
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+    background-color: #e0ebeb;
+}
+
+.container {
+    display: inline-block;
+    position: relative;
+    border: 5px solid #00ff00;
+    width: 150px;
+    margin: 5px;
+}
+
+.containerE {
+    display: inline-block;
+    position: relative;
+    border: 5px solid #141f1f;
+    width: 150px;
+    margin: 5px;
+}
+
+.containerP {
+    display: inline-block;
+    position: relative;
+    border: 5px solid #ff2244;
+    width: 150px;
+    margin: 5px;
+}
